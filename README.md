@@ -150,3 +150,5 @@ node index.js
 http://localhost:3000/
 ```
 </details>
+8. In the views folder, consider the files with .ejs extension as html files and editing them will make cahnges in the content
+9. For styles, use the css file in the public folder
