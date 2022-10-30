@@ -119,3 +119,34 @@ Now submit the pull request.
 Soon I'll be merging all your changes into the main branch of this project. You will get a notification email once the changes have been merged.
 
 </details>
+
+     
+<details>
+<summary> <strong> Working with this project </strong></summary>
+If you don't have experience working with express orany node stuff, use this brief summary to get started
+<br>
+1. Head over to <a href =  'https://nodejs.org/en/'> nodejs.org </a> <br>
+2. Download and install the package (LTS recommended). <br>
+Now you will be having access to the npm command.<br>
+3. Clone this git repo to your local machine. <br>
+4. Open terminal or cmd prompt and move to that folder using
+     
+```
+cd <Path to cloned folder>
+```
+5. Now run
+     
+```
+npm i package.json
+```
+6. Now run
+     
+```
+node index.js
+```
+7. In browser open
+     
+```
+http://localhost:3000/
+```
+</details>
