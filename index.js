@@ -8,7 +8,7 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/views'));
 
 app.use(express.urlencoded({extended: true}))
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, './public')))
 app.use(express.json())
 
 app.engine('ejs', ejsMate)
@@ -37,7 +37,6 @@ app.all('*', (req, res, next)=>{
     res.render('pageNotFound.ejs')
 })
 
-app.listen(3000, ()=>{
-    console.log('Listening on port 3000')
-})
-
+const server = app.listen(process.env.PORT || 3000)
+const portNumber = server.address().port
+console.log(`Server is running on port ${server.address().port}`)
