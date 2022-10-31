@@ -1,5 +1,133 @@
 /* Here goes the common css for all the pages */
 
-body {
-    background-color: aquamarine;
+
+@font-face {
+    font-family: Neonblitz;
+    font-style: normal;
+    font-weight: 400;
+    src: local('Neonblitz'), url(https://fonts.cdnfonts.com/s/54108/Neonblitz-Yzg8O.woff) format('woff')
 }
+
+* {
+    --slide-animation-time: 500ms;
+}
+
+body {
+    font-size: 18px;
+    background-color: #010a01;
+    margin: 0;
+}
+
+.header {
+    font-family: Neonblitz, sans-serif;
+    display: flex;
+    gap: 20px;
+    background-color: rgb(33, 37, 41);
+    padding: 15px;
+    position: sticky;
+    z-index: 1;
+}
+
+.header a {
+    text-decoration: none;
+    color: #ccc;
+}
+
+.nav-options {
+    display: flex;
+    gap: 20px;
+}
+
+.header a:hover {
+    color: #fff;
+}
+
+
+#three-bars {
+    display: none;
+    color: #888;
+    transform: scale(2);
+    right: 0;
+    position: absolute;
+    margin-right: 30px;
+    border-radius: 2px;
+    padding: 1px 3px;
+    border: 1px solid #88888870;
+}
+
+#three-bars:hover {
+    border: 1px solid #888888;
+    outline: 0;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 990px) {
+    #three-bars {
+        display: block;
+    }
+
+    .nav-options {
+        top: 50px;
+        position: absolute;
+        background-color: inherit;
+        width: 100%;
+        left: 0;
+        transition: height var(--slide-animation-time);
+        height: 0;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .nav-options a{
+        margin-left: 15px;
+    }
+}
+
+
+#cards-grid{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 1050px;
+    justify-content: center;
+}
+
+.card{
+    width: 200px;
+    height: 200px;
+    background-color: #ddd;
+    transition: transform 500ms;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card_signal{
+    transition: transform 500ms;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+}
+
+.card:hover .card_signal{
+    transform: rotateY(180deg);
+}
+
+.card_front, .card_back{
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.card_back{
+    transform: rotateY(180deg);
+}
+
+
+.card_front span, .card_front img, .card_back span, .card_back img{
+    display: block;
+}
+

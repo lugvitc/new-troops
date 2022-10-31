@@ -1,128 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="/app.css">
-    <link href="https://fonts.cdnfonts.com/css/neonblitz" rel="stylesheet">
-<style>
-@import url('https://fonts.cdnfonts.com/css/neonblitz');
-    @font-face {
-   font-family: Neonblitz;
-}
-.tubeLight {
-  color: #fff;
-  text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa;
-}
-.container {
-    width: 100%;
-}
-.effect_div {
-    position: absolute;
-    top: 30%;
-    left: 13.7%;
-}
-body {
-  font-size: 18px;
-  font-family: "Neonblitz", sans-serif;
-  background-color: #010a01;
-}   
+    <style>
+        body {
+            font-size: 18px;
+            font-family: "Neonblitz", sans-serif;
+            background-color: #010a01;
+            margin: 0;
+        }
 
-h1{
-  text-align: center;
-  font-weight: 400;
-}   
-  
-h1 {
-  font-size: 6.2rem;
-  animation: pulsate 1.5s infinite alternate;  
-  border: 0.2rem solid #fff;
-  border-radius: 2rem;
-  padding: 0.4em;
-  box-shadow: 0 0 .2rem #fff,
-            0 0 .2rem #fff,
-            0 0 2rem #0fa,
-            0 0 0.8rem #0fa,
-            0 0 2.8rem #0fa,
-            inset 0 0 1.3rem #0fa; 
-}
+        .tubeLight {
+            color: #fff;
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px #0fa,
+                0 0 82px #0fa,
+                0 0 92px #0fa,
+                0 0 102px #0fa,
+                0 0 151px #0fa;
+            font-size: 3rem;
+            border: 0.2rem solid #fff;
+            border-radius: 2rem;
+            padding: 0.4em;
+            box-shadow: 0 0 .2rem #fff,
+                0 0 .2rem #fff,
+                0 0 2rem #0fa,
+                0 0 0.8rem #0fa,
+                0 0 2.8rem #0fa,
+                inset 0 0 1.3rem #0fa;
+            position: relative;
+            top: 100px;
+            text-align: center;
+        }
 
-@keyframes pulsate {
-    
-  100% {
+        .main {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            display: grid;
+            grid-template-rows: 12.5rem 1fr;
+            align-items: center;
+            justify-items: center;
+        }
 
-      text-shadow:
-      0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa;
-  
-  }
-  
-  0% {
+        .main a {
+            text-decoration: none;
+            color: #ccc;
+        }
 
-    text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa;
-}
+        .box-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
 
-}
+        .box-link a {
+            background-color: #010a01;
+            padding: 10px;
+        }
 
-</style>
+        .box-link {
+            background-image: linear-gradient(60deg,
+                    hsl(224, 85%, 66%),
+                    hsl(269, 85%, 66%),
+                    hsl(314, 85%, 66%),
+                    hsl(359, 85%, 66%),
+                    hsl(44, 85%, 66%),
+                    hsl(89, 85%, 66%),
+                    hsl(134, 85%, 66%),
+                    hsl(179, 85%, 66%));
+            padding: 14px 4px;
+            font-size: 30px;
+            background-position: 0% 50%;
+            background-size: 300% 300%;
+            transition: transform 500ms;
+        }
+
+        .box-link:hover {
+            animation: gra 3s alternate infinite;
+            transform: scale(1.2);
+        }
+
+        @keyframes gra {
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @media only screen and (max-width:880px) {
+            .tubeLight {
+                font-size: 2rem;
+                text-shadow:
+                    0 0 7px #fff,
+                    0 0 5px #fff,
+                    0 0 16px #fff,
+                    0 0 37px #0fa,
+                    0 0 77px #0fa,
+                    0 0 87px #0fa;
+                box-shadow: 0 0 .1rem #fff,
+                    0 0 .1rem #fff,
+                    0 0 1.5rem #0fa,
+                    0 0 0.5rem #0fa,
+                    0 0 2.2rem #0fa,
+                    inset 0 0 1rem #0fa;
+            }
+        }
+
+        @media only screen and (max-width:600px) {
+            .tubeLight {
+                font-size: max(calc(100vw * 0.05 + 0rem), 1.6rem);
+                padding: 0.2rem;
+            }
+
+            .box-link{
+                font-size: 22px;
+            }
+        }
+
+        @media only screen and (max-width:260px) {
+            .tubeLight {
+                font-size: 0.8rem;
+                padding: 0.2rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="https://lugvitc.github.io/">Linux Club VITC</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    <a class="nav-link" href="/content">Content</a>
-                    <a class="nav-link" href="/technical">Technical</a>
-                    <a class="nav-link" href="/media">Media</a>
-                    <a class="nav-link" href="/management">Management</a>
-                </div>
-            </div>
+
+    <div class="header">
+        <a class="navbar-brand" href="https://lugvitc.github.io/">Linux Club VITC</a>
+        <div class="nav-options">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/content">Content</a>
+            <a class="nav-link" href="/technical">Technical</a>
+            <a class="nav-link" href="/media">Media</a>
+            <a class="nav-link" href="/management">Management</a>
         </div>
-    </nav>    
-    <div class="container">
-        <div class="effect_div">
-            <h1 class="tubeLight">Congratulations <br> Team-2O22</h1>
+        <svg id=three-bars xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+        </svg>
+    </div>
+
+    <div class="main">
+        <div class="tubeLight">Congratulations Team-2O22</div>
+        <div class="box-links">
+            <div class="box-link"><a class="nav-link" href="/content">Content</a></div>
+            <div class="box-link"><a class="nav-link" href="/technical">Technical</a></div>
+            <div class="box-link"><a class="nav-link" href="/media">Media</a></div>
+            <div class="box-link"><a class="nav-link" href="/management">Management</a></div>
         </div>
-    
-     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    </div>
 </body>
+
+<script>
+    let bars = document.querySelector("#three-bars");
+    var bars_opened = false;
+    bars.addEventListener("click", () => {
+        document.querySelector(".nav-options").style.height = !bars_opened ? "200px" : "0px";
+        bars_opened = !bars_opened;
+    })
+    window.addEventListener("resize", () => {
+        if (document.body.offsetWidth >= 990) {
+            document.querySelector(".nav-options").style.height = "fit-content";
+        }
+        else {
+            if (document.querySelector(".nav-options").style.height == "fit-content") {
+                document.querySelector(".nav-options").style.height = "0px";
+            }
+        }
+    })
+</script>
+
 </html>

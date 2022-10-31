@@ -1,41 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="/app.css">
+    <!-- Hacker icon attribution <a href="https://www.flaticon.com/free-icons/scammer" title="scammer icons">Scammer icons created by Andrean Prabowo - Flaticon</a> -->
+    <style>
+        .tubeLight {
+            font-family: "Neonblitz", sans-serif;
+            color: #fff;
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px #0fa,
+                0 0 82px #0fa,
+                0 0 92px #0fa,
+                0 0 102px #0fa,
+                0 0 151px #0fa;
+            font-size: 3rem;
+            border: 0.2rem solid #fff;
+            border-radius: 2rem;
+            padding: 0.4em;
+            box-shadow: 0 0 .2rem #fff,
+                0 0 .2rem #fff,
+                0 0 2rem #0fa,
+                0 0 0.8rem #0fa,
+                0 0 2.8rem #0fa,
+                inset 0 0 1.3rem #0fa;
+
+        }
+
+        .main {
+            position: absolute;
+            top: 51px;
+            min-height: calc(100vh - 51px);
+            width: 100%;
+            height: fit-content;
+            display: grid;
+            grid-template-rows: 12.5rem 1fr;
+            align-items: center;
+            justify-items: center;
+            gap: 50px;
+        }
+
+        .main a {
+            text-decoration: none;
+            color: #ccc;
+        }
+
+        @media only screen and (max-width:880px) {
+            .tubeLight {
+                font-size: 2rem;
+                text-shadow:
+                    0 0 7px #fff,
+                    0 0 5px #fff,
+                    0 0 16px #fff,
+                    0 0 37px #0fa,
+                    0 0 77px #0fa,
+                    0 0 87px #0fa;
+                box-shadow: 0 0 .1rem #fff,
+                    0 0 .1rem #fff,
+                    0 0 1.5rem #0fa,
+                    0 0 0.5rem #0fa,
+                    0 0 2.2rem #0fa,
+                    inset 0 0 1rem #0fa;
+            }
+        }
+
+        @media only screen and (max-width:600px) {
+            .tubeLight {
+                font-size: max(calc(100vw * 0.05 + 0rem), 1.6rem);
+                padding: 0.4rem;
+            }
+        }
+
+        @media only screen and (max-width:260px) {
+            .tubeLight {
+                font-size: 0.8rem;
+                padding: 0.4rem;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="https://lugvitc.github.io/">Linux Club VITC</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="/">Home</a>
-                    <a class="nav-link" href="/content">Content</a>
-                    <a class="nav-link" href="/technical">Technical</a>
-                    <a class="nav-link active" aria-current="page" href="/media">Media</a>
-                    <a class="nav-link" href="/management">Management</a>
-                </div>
-            </div>
+    <div class="header">
+        <a class="navbar-brand" href="https://lugvitc.github.io/">Linux Club VITC</a>
+        <div class="nav-options">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/content">Content</a>
+            <a class="nav-link" href="/technical">Technical</a>
+            <a class="nav-link" href="/media">Media</a>
+            <a class="nav-link" href="/management">Management</a>
         </div>
-    </nav>    
-    <h1>Media</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <svg id=three-bars xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+        </svg>
+    </div>
+    <div class="main">
+        <div class="tubeLight">Media Team</div>
+        <div id="cards-grid"></div>
+    </div>
 
 </body>
+<script>
+    let bars = document.querySelector("#three-bars");
+    var bars_opened = false;
+    bars.addEventListener("click", () => {
+        document.querySelector(".nav-options").style.height = !bars_opened ? "200px" : "0px";
+        bars_opened = !bars_opened;
+    })
+    window.addEventListener("resize", () => {
+        if (document.body.offsetWidth >= 990) {
+            document.querySelector(".nav-options").style.height = "fit-content";
+        }
+        else {
+            if (document.querySelector(".nav-options").style.height == "fit-content") {
+                document.querySelector(".nav-options").style.height = "0px";
+            }
+        }
+    })
+
+// Details of the participants
+
+    var content = {
+        "participant_1_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Media"
+        },
+        "participant_2_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Media"
+        }
+        ,
+        "participant_3_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Media"
+        }
+        ,
+        "participant_4_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Media"
+        },
+        "participant_5_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Media"
+        },
+        "participant_6_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Media"
+        },
+        "participant_7_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Media"
+        },
+        "participant_8_reg": {
+            "name": "sample_2",
+            "photo": "path/to/image",
+            "department": "Media"
+        },
+    }
+
+// Generating cards
+
+    for (const participant_reg_no in content) {
+        if (Object.hasOwnProperty.call(content, participant_reg_no)) {
+            const participant = content[participant_reg_no];
+
+            let div = document.createElement("div");
+            let div_front = document.createElement("div");
+            let div_back = document.createElement("div");
+            let div_signal = document.createElement("div");
+            div.setAttribute("class", "card");
+            div_signal.setAttribute("class", "card_signal")
+            div_front.setAttribute("class", "card_front");
+            div_back.setAttribute("class", "card_back");
+
+            div.onclick = (e) => {
+                console.log(participant);
+            }
+            div_front.innerHTML = `
+            <img class="hacker" src="/hacker_black.png">
+            <span class="real-name">${participant.name}</span>
+            <span class="real-reg">${participant_reg_no}</span>
+            <span class="real-depart">${participant.department}</span>
+            `
+            div_back.innerHTML = `
+            <img class="real-pic" src="${participant.photo}">
+            <span class="real-name">${participant.name}</span>
+            <span class="real-reg">${participant_reg_no}</span>
+            <span class="real-depart">${participant.department}</span>
+            `
+            div_signal.appendChild(div_front);
+            div_signal.appendChild(div_back);
+            div.appendChild(div_signal);
+            document.getElementById("cards-grid").appendChild(div);
+        }
+    }
+
+</script>
+
 </html>
