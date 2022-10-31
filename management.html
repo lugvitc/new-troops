@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical</title>
-    <link rel="stylesheet" href="/app.css">
+    <title>Management</title>
+    <link rel="stylesheet" href="app.css">
     <!-- Hacker icon attribution <a href="https://www.flaticon.com/free-icons/scammer" title="scammer icons">Scammer icons created by Andrean Prabowo - Flaticon</a> -->
     <style>
         .tubeLight {
@@ -92,11 +92,11 @@
     <div class="header">
         <a class="navbar-brand" href="https://lugvitc.github.io/">Linux Club VITC</a>
         <div class="nav-options">
-            <a class="nav-link" href="/">Home</a>
-            <a class="nav-link" href="/content">Content</a>
-            <a class="nav-link" href="/technical">Technical</a>
-            <a class="nav-link" href="/media">Media</a>
-            <a class="nav-link" href="/management">Management</a>
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="content.html">Content</a>
+            <a class="nav-link" href="technical.html">Technical</a>
+            <a class="nav-link" href="media.html">Media</a>
+            <a class="nav-link" href="management.html">Management</a>
         </div>
         <svg id=three-bars xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-list" viewBox="0 0 16 16">
@@ -105,7 +105,7 @@
         </svg>
     </div>
     <div class="main">
-        <div class="tubeLight">Technical Team</div>
+        <div class="tubeLight">Management Team</div>
         <div id="cards-grid"></div>
     </div>
 
@@ -134,44 +134,44 @@
         "participant_1_reg": {
             "name": "sample",
             "photo": "path/to/image",
-            "department": "Technical"
+            "department": "Management"
         },
         "participant_2_reg": {
             "name": "sample",
             "photo": "path/to/image",
-            "department": "Technical"
+            "department": "Management"
         }
         ,
         "participant_3_reg": {
             "name": "sample",
             "photo": "path/to/image",
-            "department": "Technical"
+            "department": "Management"
         }
         ,
         "participant_4_reg": {
             "name": "sample",
             "photo": "path/to/image",
-            "department": "Technical"
+            "department": "Management"
         },
         "participant_5_reg": {
             "name": "sample",
             "photo": "path/to/image",
-            "department": "Technical"
+            "department": "Management"
         },
         "participant_6_reg": {
             "name": "sample",
             "photo": "path/to/image",
-            "department": "Technical"
+            "department": "Management"
         },
         "participant_7_reg": {
             "name": "sample",
             "photo": "path/to/image",
-            "department": "Technical"
+            "department": "Management"
         },
         "participant_8_reg": {
             "name": "sample_2",
             "photo": "path/to/image",
-            "department": "Technical"
+            "department": "Management"
         },
     }
 
@@ -194,7 +194,7 @@
                 console.log(participant);
             }
             div_front.innerHTML = `
-            <img class="hacker" src="/hacker_black.png">
+            <img class="hacker" src="res/hacker_black.png">
             <span class="real-name">${participant.name}</span>
             <span class="real-reg">${participant_reg_no}</span>
             <span class="real-depart">${participant.department}</span>

@@ -5,16 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404</title>
-    <link rel="stylesheet" href="/app.css">
+    <title>Technical</title>
+    <link rel="stylesheet" href="app.css">
+    <!-- Hacker icon attribution <a href="https://www.flaticon.com/free-icons/scammer" title="scammer icons">Scammer icons created by Andrean Prabowo - Flaticon</a> -->
     <style>
-        body {
-            font-size: 18px;
-            font-family: "Neonblitz", sans-serif;
-            background-color: #010a01;
-            margin: 0;
-        }
-
         .tubeLight {
             font-family: "Neonblitz", sans-serif;
             color: #fff;
@@ -58,44 +52,6 @@
             color: #ccc;
         }
 
-        .box-links {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            top: -170px;
-            position: relative;
-        }
-
-        .box-link a {
-            background-color: #010a01;
-            padding: 10px;
-        }
-
-        .box-link {
-            background-image: linear-gradient(60deg,
-                    hsl(224, 85%, 66%),
-                    hsl(269, 85%, 66%),
-                    hsl(314, 85%, 66%),
-                    hsl(359, 85%, 66%),
-                    hsl(44, 85%, 66%),
-                    hsl(89, 85%, 66%),
-                    hsl(134, 85%, 66%),
-                    hsl(179, 85%, 66%));
-            padding: 14px 4px;
-            font-size: 30px;
-            background-position: 0% 50%;
-            background-size: 300% 300%;
-            transition: transform 500ms;
-        }
-
-        .box-link:hover {
-            animation: gra 3s alternate infinite;
-            transform: scale(1.2);
-        }
-
-
         @media only screen and (max-width:880px) {
             .tubeLight {
                 font-size: 2rem;
@@ -128,6 +84,7 @@
                 padding: 0.4rem;
             }
         }
+
     </style>
 </head>
 
@@ -135,11 +92,11 @@
     <div class="header">
         <a class="navbar-brand" href="https://lugvitc.github.io/">Linux Club VITC</a>
         <div class="nav-options">
-            <a class="nav-link" href="/">Home</a>
-            <a class="nav-link" href="/content">Content</a>
-            <a class="nav-link" href="/technical">Technical</a>
-            <a class="nav-link" href="/media">Media</a>
-            <a class="nav-link" href="/management">Management</a>
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="content.html">Content</a>
+            <a class="nav-link" href="technical.html">Technical</a>
+            <a class="nav-link" href="media.html">Media</a>
+            <a class="nav-link" href="management.html">Management</a>
         </div>
         <svg id=three-bars xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-list" viewBox="0 0 16 16">
@@ -148,11 +105,10 @@
         </svg>
     </div>
     <div class="main">
-        <div class="tubeLight">Page not found</div>
-        <div class="box-links">
-            <div class="box-link"><a class="nav-link" href="/">Home</a></div>
-        </div>
+        <div class="tubeLight">Technical Team</div>
+        <div id="cards-grid"></div>
     </div>
+
 </body>
 <script>
     let bars = document.querySelector("#three-bars");
@@ -171,6 +127,91 @@
             }
         }
     })
+
+// Details of the participants
+
+    var content = {
+        "participant_1_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Technical"
+        },
+        "participant_2_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Technical"
+        }
+        ,
+        "participant_3_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Technical"
+        }
+        ,
+        "participant_4_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Technical"
+        },
+        "participant_5_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Technical"
+        },
+        "participant_6_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Technical"
+        },
+        "participant_7_reg": {
+            "name": "sample",
+            "photo": "path/to/image",
+            "department": "Technical"
+        },
+        "participant_8_reg": {
+            "name": "sample_2",
+            "photo": "path/to/image",
+            "department": "Technical"
+        },
+    }
+
+// Generating cards
+
+    for (const participant_reg_no in content) {
+        if (Object.hasOwnProperty.call(content, participant_reg_no)) {
+            const participant = content[participant_reg_no];
+
+            let div = document.createElement("div");
+            let div_front = document.createElement("div");
+            let div_back = document.createElement("div");
+            let div_signal = document.createElement("div");
+            div.setAttribute("class", "card");
+            div_signal.setAttribute("class", "card_signal")
+            div_front.setAttribute("class", "card_front");
+            div_back.setAttribute("class", "card_back");
+
+            div.onclick = (e) => {
+                console.log(participant);
+            }
+            div_front.innerHTML = `
+            <img class="hacker" src="res/hacker_black.png">
+            <span class="real-name">${participant.name}</span>
+            <span class="real-reg">${participant_reg_no}</span>
+            <span class="real-depart">${participant.department}</span>
+            `
+            div_back.innerHTML = `
+            <img class="real-pic" src="${participant.photo}">
+            <span class="real-name">${participant.name}</span>
+            <span class="real-reg">${participant_reg_no}</span>
+            <span class="real-depart">${participant.department}</span>
+            `
+            div_signal.appendChild(div_front);
+            div_signal.appendChild(div_back);
+            div.appendChild(div_signal);
+            document.getElementById("cards-grid").appendChild(div);
+        }
+    }
+
 </script>
 
 </html>
