@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="footer.css">
     <style>
         body {
             font-size: 18px;
@@ -50,6 +52,22 @@
             grid-template-rows: 12.5rem 1fr;
             align-items: center;
             justify-items: center;
+            z-index: 0;
+        }
+
+        .stage-svg {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 3rem;
+            z-index: -1;
+        }
+
+        .toggle-svg {
+            position: fixed;
+            top: 3rem;
+            z-index: 1;
+            display: none;
         }
 
         .main a {
@@ -156,7 +174,10 @@
         </svg>
     </div>
 
+    
+
     <div class="main">
+        
 	    <div class="tubeLight">Linux Club <br/>Congratulations Team-2O22</div>
         <div class="box-links">
 	    <div class="box-link"><a class="nav-link" href="technical.html">Technical</a></div>
@@ -166,6 +187,38 @@
             <div class="box-link"><a class="nav-link" href="content.html">Content</a></div>
         </div>
     </div>
+
+    <svg class="stage-svg" stroke="#fff" stroke-linecap="round">
+        <g class="stage">
+          <rect width="100%" height="100%" fill="rgba(0,0,0,0)" stroke="none"/>
+        </g>
+    </svg><svg class="toggle-svg" stroke="#fff" stroke-linecap="round">
+        <g class="toggle" style="cursor:pointer;user-select:none">
+          <path d="M100,20 118,20" stroke-width="25"/>
+          <path class="knob" d="M100,20 100,20" stroke-width="20" stroke="#000"/>
+          <text class="txt1" fill="#fff" x="11" y="26">Manual</text>
+          <text class="txt2" fill="#fff" x="144" y="26" opacity="0.3">Auto</text>
+        </g>
+      </svg>
+
+    <div class="celebration">
+      <script defer src="celebration.js"></script>
+      <script src="gsap.min.js"></script>
+    </div>
+    
+    <footer>
+        <div>
+            <div class="container">
+            <ul>
+                <li ><a href="#"><i id="a" class="fa fa-home" aria-hidden="true"></i></a></li>
+                <li><a href="https://lugvitc.github.io/"><i id="b" class="fa fa-linux" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/lugvitc/"><i id="c" class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/lugvitc/"><i id="d" class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/lugvitc"><i id="e" class="fa fa-github" aria-hidden="true"></i></a></li>
+            </ul>
+            </div>
+        </div>
+    </footer>
 </body>
 
 <script>
