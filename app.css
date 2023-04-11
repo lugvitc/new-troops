@@ -98,6 +98,7 @@ body {
     background-color: #ddd;
     transition: transform 500ms;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
 }
 
 .card_signal{
